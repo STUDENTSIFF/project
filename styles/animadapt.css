@@ -1,0 +1,435 @@
+/* ================================================================= */
+/*                       АНИМАЦИИ                                    */
+/* ================================================================= */
+
+/* Импульс кнопки Hero - перенесено на общие кнопки, теперь свечение */
+.animate-pulse {
+    animation: buttonGlowPulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+@keyframes buttonGlowPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: var(--box-shadow-elevated);
+        filter: brightness(1);
+    }
+    50% {
+        transform: scale(1.03);
+        box-shadow: var(--box-shadow-hover), var(--glow-primary);
+        filter: brightness(1.1);
+    }
+}
+
+/* Анимация появления карточек (на основе reveal-on-scroll) */
+/* Важно: animate-pop-in изначально прозрачен и смещен */
+.animate-pop-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Класс 'reveal' добавляется IntersectionObserver, делая элемент видимым */
+.animate-pop-in.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Улучшенные задержки */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+.delay-500 { transition-delay: 0.5s; }
+.delay-600 { transition-delay: 0.6s; }
+.delay-700 { transition-delay: 0.7s; }
+.delay-800 { transition-delay: 0.8s; }
+.delay-900 { transition-delay: 0.9s; }
+.delay-1000 { transition-delay: 1s; }
+
+
+/* Базовые стили для появления при прокрутке (более выраженные) */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 1s cubic-bezier(0.25, 0.8, 0.25, 1), transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Новые глобальные анимации */
+@keyframes fadeInBackground {
+    from { opacity: 0; transform: scale(1.1); }
+    to { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes slideInUpContent {
+    from { transform: translateY(80px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounceIn { /* Для правильного ответа */
+    0%, 20%, 40%, 60%, 80%, 100% {
+        -webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+        transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+    }
+    0% { opacity: 0; transform: scale3d(.3, .3, .3) }
+    20% { transform: scale3d(1.1, 1.1, 1.1) }
+    40% { transform: scale3d(.9, .9, .9) }
+    60% { opacity: 1; transform: scale3d(1.03, 1.03, 1.03) }
+    80% { transform: scale3d(.97, .97, .97) }
+    100% { opacity: 1; transform: scale3d(1, 1, 1) }
+}
+
+@keyframes shake { /* Для неправильного ответа */
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* ================================================================= */
+/*                       АДАПТИВНЫЙ ДИЗАЙН                           */
+/* ================================================================= */
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 25px;
+    }
+    h1 {
+        font-size: 5em;
+    }
+    h2 {
+        font-size: 3.2em;
+    }
+    .hero__description { /* Изменено */
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 1024px) {
+    .section {
+        padding: 100px 0;
+    }
+    .section--alt {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+    h1 {
+        font-size: 4em;
+    }
+    h2 {
+        font-size: 2.8em;
+        margin-bottom: 60px;
+    }
+    .hero__description { /* Изменено */
+        font-size: 1.5em;
+    }
+    .button { /* Изменено */
+        padding: 14px 30px;
+        font-size: 0.95em;
+    }
+    .site-logo { /* Изменено */
+        font-size: 2em;
+    }
+    .main-nav__item { /* Изменено */
+        margin-left: 30px;
+    }
+    .card {
+        padding: 35px;
+    }
+    .accordion__header { /* Изменено */
+        font-size: 1.3em;
+        padding: 22px 30px;
+    }
+    .accordion__content.active { /* Изменено */
+        padding: 25px 30px;
+    }
+    .quiz-block { /* Изменено */
+        padding: 50px;
+    }
+    .testimonials-carousel__card { /* Изменено */
+        padding: 50px;
+    }
+    .daily-fact-section h2 { /* Изменено */
+        font-size: 3em;
+    }
+
+    /* Адаптивность для блока Services-Section */
+    .services-section__wrapper { /* Изменено */
+        flex-direction: column; /* Колонки друг под другом */
+        gap: 40px;
+    }
+    .services-section__image-col, .services-section__text-col { /* Изменено */
+        min-width: unset; /* Сброс минимальной ширины */
+        width: 100%; /* Занимают всю ширину */
+    }
+    .services-section__image-col { /* Изменено */
+        transform: rotateZ(0deg); /* Убираем наклон на мобильных */
+    }
+
+    /* Блок Courses-Section */
+    .course-card__image { /* Изменено */
+        height: 200px;
+        margin: -35px -35px 20px -35px; /* Корректировка отступов изображения */
+    }
+    .course-card .button { /* Изменено */
+        font-size: 0.9em;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header .container { /* Изменено */
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .site-logo { /* Изменено */
+        width: auto;
+        margin-bottom: 0;
+        justify-content: flex-start;
+        font-size: 1.8em;
+    }
+    .main-nav { /* Изменено */
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 999;
+    }
+    .main-nav__list { /* Изменено */
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 15px 15px;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease-in-out;
+        backdrop-filter: blur(8px);
+        border-top: 1px solid var(--border-color);
+        border-left: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+    }
+    .main-nav__list.active { /* Изменено */
+        display: flex;
+        max-height: 400px;
+    }
+    .main-nav__item { /* Изменено */
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid var(--bg-alt);
+    }
+    .main-nav__item:last-child { /* Изменено */
+        border-bottom: none;
+    }
+    .main-nav__link { /* Изменено */
+        display: block;
+        padding: 18px 0;
+        color: var(--text-color);
+        background: none; /* Убираем фон для мобильного */
+        border-radius: 0;
+    }
+    .main-nav__link::before { /* Изменено */
+        display: none; /* Убираем эффект заливки для мобильного */
+    }
+    .main-nav__link:hover { /* Изменено */
+        color: var(--primary-color);
+        transform: translateY(0); /* Убираем подъем */
+        background-color: var(--bg-base); /* Подсветка при наведении */
+    }
+    .burger-menu {
+        display: block;
+        position: static;
+        margin-left: auto;
+    }
+    .cart-button { /* Изменено */
+        order: 1; /* Перемещаем корзину в начало навигации на мобильных */
+        margin-left: 0;
+        margin-right: 15px; /* Отступ справа от корзины */
+    }
+    .hero { /* Изменено */
+        height: 80vh;
+        padding-top: 80px;
+    }
+    .hero__title { /* Изменено */
+        font-size: 3em;
+    }
+    .hero__description { /* Изменено */
+        font-size: 1.1em;
+        margin-bottom: 40px;
+    }
+    .section {
+        padding: 80px 0;
+    }
+    .section--alt { /* Изменено */
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    h2 {
+        font-size: 2.2em;
+        margin-bottom: 50px;
+    }
+    h3 {
+        font-size: 2em;
+    }
+    .about-section__grid, .resources-section__grid, .courses-section__grid { /* Изменено */
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .quiz-block { /* Изменено */
+        padding: 40px;
+    }
+    .testimonials-carousel { /* Изменено */
+        flex-direction: column;
+    }
+    .testimonials-carousel__nav-button { /* Изменено */
+        margin: 15px auto;
+        padding: 12px 18px;
+        font-size: 1.8em;
+    }
+    .testimonials-carousel__nav-button--prev { /* Изменено */
+        order: 2; margin-top: 25px;
+    }
+    .testimonials-carousel__nav-button--next { /* Изменено */
+        order: 3; margin-top: 15px;
+    }
+    .testimonials-carousel__viewport { /* Изменено */
+        order: 1; width: 100%;
+    }
+    .testimonials-carousel__card { /* Изменено */
+        padding: 40px;
+    }
+    .main-footer { /* Изменено */
+        padding: 50px 0;
+    }
+    .services-section__image-col img { /* Изменено */
+        height: 400px; /* Фиксированная высота для мобильных */
+    }
+    .section__description--large { /* Изменено */
+        font-size: 1.1em;
+    }
+
+    /* Модальное окно на мобильных */
+    .modal__content { /* Изменено */
+        padding: 30px;
+        width: 95%; /* Чуть шире на самых маленьких */
+        margin: 5% auto; /* Чуть меньше отступы */
+    }
+    .modal__cart-list-item { /* Изменено */
+        flex-direction: column; /* Элементы друг под другом */
+        align-items: flex-start;
+        font-size: 1em;
+    }
+    .modal__cart-item-price, .modal__remove-item-button { /* Изменено */
+        margin-top: 5px;
+        margin-left: 0;
+    }
+    .modal__total-text { /* Изменено */
+        font-size: 1.1em;
+    }
+    .modal__total-price { /* Изменено */
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    .hero__title { /* Изменено */
+        font-size: 2.2em;
+    }
+    .hero__description { /* Изменено */
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+    .button { /* Изменено */
+        padding: 12px 25px;
+        font-size: 0.9em;
+    }
+    .section__description { /* Изменено */
+        font-size: 1.05em;
+        margin-bottom: 40px;
+    }
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 40px;
+    }
+    h3 {
+        font-size: 1.6em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .card {
+        padding: 30px;
+    }
+    .icon {
+        font-size: 4.5em;
+    }
+    .accordion__header { /* Изменено */
+        font-size: 1.15em;
+        padding: 18px 25px;
+    }
+    .accordion__content.active { /* Изменено */
+        padding: 20px 25px;
+    }
+    .quiz-block { /* Изменено */
+        padding: 30px;
+    }
+    .quiz-block__question { /* Изменено */
+        font-size: 1.5em;
+        margin-bottom: 30px;
+    }
+    .quiz-block__option-button { /* Изменено */
+        font-size: 1.1em;
+        padding: 15px 20px;
+    }
+    .quiz-block__submit-button, .quiz-block__next-button { /* Изменено */
+        min-width: unset;
+        width: 100%;
+        padding: 15px 20px;
+    }
+    .testimonials-carousel__card p { /* Изменено */
+        font-size: 1.1em;
+        padding: 30px;
+    }
+    .daily-fact-section h2 { /* Изменено */
+        font-size: 2.2em;
+    }
+    .daily-fact-section__text { /* Изменено */
+        font-size: 1.3em;
+    }
+    .contact-form { /* Изменено */
+        padding: 30px;
+    }
+    .contact-form__input, .contact-form__textarea { /* Изменено */
+        font-size: 1em;
+        padding: 12px;
+    }
+    .scroll-to-top-button { /* Изменено */
+        width: 50px;
+        height: 50px;
+        font-size: 2em;
+        bottom: 20px;
+        right: 20px;
+    }
+    .services-section__image-col img { /* Изменено */
+        height: 300px;
+    }
+    .services-section__caption { /* Изменено */
+        font-size: 0.8em;
+        padding: 5px 10px;
+    }
+    /* Блок Courses-Section на самых маленьких */
+    .course-card__image { /* Изменено */
+        height: 180px;
+        margin: -30px -30px 20px -30px; /* Корректировка отступов изображения */
+    }
+    .course-card {
+        padding: 30px;
+    }
+}

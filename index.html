@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хроно-Навигатор: Ваш Путеводитель по Истории</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0xugR9zV9rFDVRyA+WzX4hNl+CfChXzX+d/XWz4b9E6/fC+l/j6sPz/f8A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="site-logo">
+                <span class="site-logo__icon">&#128336;</span> Хроно-Навигатор
+            </div>
+            <nav class="main-nav" id="mainNav">
+                <ul class="main-nav__list">
+                    <li class="main-nav__item"><a href="#hero" class="main-nav__link">Главная</a></li>
+                    <li class="main-nav__item"><a href="#about" class="main-nav__link">Почему История?</a></li>
+                    <li class="main-nav__item"><a href="#services" class="main-nav__link">Как Мы Помогаем</a></li>
+                    <li class="main-nav__item"><a href="#courses" class="main-nav__link">Курсы</a></li>
+                    <li class="main-nav__item"><a href="#periods" class="main-nav__link">Хроники Знаний</a></li>
+                    <li class="main-nav__item"><a href="#resources" class="main-nav__link">Ресурсы</a></li>
+                    <li class="main-nav__item"><a href="#quiz" class="main-nav__link">Викторина</a></li>
+                    <li class="main-nav__item"><a href="#contact" class="main-nav__link">Контакты</a></li>
+                </ul>
+                <div class="burger-menu" id="burgerMenu">&#9776;</div>
+                <!-- Иконка корзины, перемещена для лучшего расположения -->
+                <button class="cart-button" id="openCartBtn" aria-label="Открыть корзину">
+                    <span class="cart-button__icon">&#128722;</span>
+                    <span class="cart-button__count" id="cartCount">0</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero section">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">История: Ваш Путеводитель во Времени</h1>
+                    <p class="hero__description">Откройте для себя эпохи, цивилизации и личности, сформировавшие наш мир. Погрузитесь в прошлое, чтобы уверенно строить будущее.</p>
+                    <a href="#services" class="button button--primary hero__button animate-pulse">Начать Великое Путешествие</a>
+                </div>
+            </div>
+        </section>
+
+  <section id="about" class="about-section section reveal-on-scroll">
+            <div class="container">
+                <h2 class="section__title">Почему История Важна?</h2>
+                <p class="section__description">Изучение прошлого — это не просто набор фактов, а ключ к пониманию человеческой природы, общественных процессов и глобальных тенденций.</p>
+                <div class="about-section__grid">
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services-section section section--alt reveal-on-scroll">
+            <div class="container">
+                <div class="services-section__wrapper">
+                    <div class="services-section__image-col">
+                        <figure class="services-section__figure">
+                            <img src="images/main.jpg" alt="Древняя книга и символ мудрости" loading="lazy" class="services-section__image">
+                            <figcaption class="services-section__caption">Погружение в вековую мудрость и тайны прошлого.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="services-section__text-col">
+                        <h2 class="section__title">Ваш Путь к Глубокому Пониманию Истории</h2>
+                        <p class="section__description section__description--align-left section__description--large">
+                            В "Хроно-Навигаторе" мы верим, что история — это не просто набор дат и фактов, а живая летопись человеческого опыта, кладезь мудрости и вдохновения. Мы предлагаем уникальный подход, который трансформирует изучение прошлого из рутины в захватывающее интеллектуальное приключение. Наша миссия — не просто передать знания, а научить вас выстраивать мосты между великими эпохами и современностью, раскрывать скрытые связи и видеть уроки, которые формируют будущее. 
+                        </p>
+                        <p class="section__description section__description--align-left section__description--large">
+                            С нами вы научитесь мыслить критически, анализировать первоисточники и формировать собственный, неповторимый взгляд на ход цивилизации. Мы вдохновляем на открытие новых горизонтов понимания, предлагая не просто учебный материал, а ключи к пониманию себя и всего мира вокруг. Откройте для себя, как прошлое оживает, когда его исследуешь с умом и сердцем.
+                        </p>
+                        <a href="#contact" class="button button--primary services-section__button animate-hover-scale">Откройте для Себя Нашу Философию</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- РАЗДЕЛ: КУРСЫ -->
+        <section id="courses" class="courses-section section reveal-on-scroll">
+            <div class="container">
+                <h2 class="section__title">Наши Курсы: Глубокое Погружение в Эпохи</h2>
+                <p class="section__description">
+                    Выберите свой путь к освоению истории. От древнейших цивилизаций до современности – каждый курс разработан для максимально эффективного и увлекательного обучения.
+                </p>
+                <div class="courses-section__grid" id="coursesGrid">
+                </div>
+            </div>
+        </section>
+        
+        <section id="periods" class="periods-section section reveal-on-scroll">
+            <div class="container">
+                <h2 class="section__title">Хроники Знаний: Ключевые Исторические Периоды</h2>
+                <p class="section__description">Погрузитесь в важнейшие эпохи человечества, познакомьтесь с их уникальными особенностями и великими достижениями.</p>
+                <div class="accordion">
+                    <div class="accordion__item">
+                        <button class="accordion__header">
+                            <h3 class="accordion__title">Древний Мир (ок. 3500 до н.э. – 500 н.э.)</h3>
+                            <span class="accordion__icon">&#9660;</span>
+                        </button>
+                        <div class="accordion__content">
+                            <p class="accordion__description">Зарождение цивилизаций в Месопотамии, Египте, Китае, Индии. Развитие Греции и Рима, их вклад в философию, право, искусство, архитектуру. Формирование империй и возникновение мировых религий.</p>
+                            <ul class="accordion__list">
+                                <li class="accordion__list-item"><strong>Ключевые события:</strong> Строительство пирамид, Троянская война, Основание Рима, Пунические войны, Падение Западной Римской империи.</li>
+                                <li class="accordion__list-item"><strong>Значимые фигуры:</strong> Хаммурапи, Нефертити, Александр Македонский, Юлий Цезарь, Октавиан Август.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion__item">
+                        <button class="accordion__header">
+                            <h3 class="accordion__title">Средневековье (ок. 500 – 1500 н.э.)</h3>
+                            <span class="accordion__icon">&#9660;</span>
+                        </button>
+                        <div class="accordion__content">
+                            <p class="accordion__description">Эпоха между античностью и Новым временем. Характеризуется феодализмом, доминированием христианства в Европе, расцветом исламского мира и могуществом Византии. Крестовые походы, Столетняя война, развитие городов и университетов.</p>
+                            <ul class="accordion__list">
+                                <li class="accordion__list-item"><strong>Ключевые события:</strong> Коронация Карла Великого, Крестовые походы, Монгольские завоевания, Столетняя война, Черная смерть.</li>
+                                <li class="accordion__list-item"><strong>Значимые фигуры:</strong> Карл Великий, Саладин, Жанна д'Арк, Чингисхан, Марко Поло.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion__item">
+                        <button class="accordion__header">
+                            <h3 class="accordion__title">Новое Время (ок. 1500 – 1914 н.э.)</h3>
+                            <span class="accordion__icon">&#9660;</span>
+                        </button>
+                        <div class="accordion__content">
+                            <p class="accordion__description">Эпоха Великих географических открытий, Реформации, научных революций, Просвещения, промышленной революции. Формирование национальных государств, колониальные империи, войны за мировое господство.</p>
+                            <ul class="accordion__list">
+                                <li class="accordion__list-item"><strong>Ключевые события:</strong> Открытие Америки, Реформация, Английская революция, Великая французская революция, Промышленная революция.</li>
+                                <li class="accordion__list-item"><strong>Значимые фигуры:</strong> Христофор Колумб, Мартин Лютер, Исаак Ньютон, Наполеон Бонапарт, Королева Виктория.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion__item">
+                        <button class="accordion__header">
+                            <h3 class="accordion__title">Новейшее Время (с 1914 н.э. – настоящее время)</h3>
+                            <span class="accordion__icon">&#9660;</span>
+                        </button>
+                        <div class="accordion__content">
+                            <p class="accordion__description">Две мировые войны, холодная война, распад колониальных систем, научно-техническая революция, глобализация, развитие информационных технологий. Формирование современного миропорядка, экологические проблемы и вызовы XXI века.</p>
+                            <ul class="accordion__list">
+                                <li class="accordion__list-item"><strong>Ключевые события:</strong> Первая и Вторая мировые войны, Октябрьская революция, Холодная война, Распад СССР, Теракты 11 сентября, Пандемия COVID-19.</li>
+                                <li class="accordion__list-item"><strong>Значимые фигуры:</strong> Вудро Вильсон, Адольф Гитлер, Иосиф Сталин, Уинстон Черчилль, Франклин Рузвельт, Нельсон Мандела, Стив Джобс.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="resources-section section section--alt reveal-on-scroll">
+            <div class="container">
+                <h2 class="section__title">Полезные Ресурсы для Изучения Истории</h2>
+                <p class="section__description">Расширьте свои горизонты с помощью нашей тщательно подобранной коллекции интерактивных и информативных материалов.</p>
+                <div class="resources-section__grid">
+                    <div class="card resources-section__card animate-pop-in">
+                        <span class="icon">&#128196;</span>
+                        <h3 class="card__title">Интерактивные Хронологии</h3>
+                        <p class="card__description">Визуализируйте события во времени, прослеживайте их взаимосвязи на динамических шкалах, чтобы лучше усвоить последовательность и логику истории.</p>
+                        <a href="#" class="resource-link">Перейти к хронологиям</a>
+                    </div>
+                    <div class="card resources-section__card animate-pop-in delay-200">
+                        <span class="icon">&#128279;</span>
+                        <h3 class="card__title">Банк Исторических Карт</h3>
+                        <p class="card__description">Изучайте изменения границ государств, пути великих походов и точное местоположение значимых битв и событий. История оживает на картах!</p>
+                        <a href="#" class="resource-link">Открыть карты</a>
+                    </div>
+                    <div class="card resources-section__card animate-pop-in delay-400">
+                        <span class="icon">&#128100;</span>
+                        <h3 class="card__title">Энциклопедия Личностей</h3>
+                        <p class="card__description">Подробные биографии и глубокий анализ вклада в историю великих правителей, ученых, полководцев, художников и мыслителей.</p>
+                        <a href="#" class="resource-link">Изучить личности</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="quiz-section section reveal-on-scroll">
+            <div class="container">
+                <h2 class="section__title">Проверьте Свои Знания!</h2>
+                <p class="section__description">Ответьте на наши увлекательные вопросы и узнайте, насколько хорошо вы помните ключевые моменты истории.</p>
+                <div class="card quiz-block animate-pop-in">
+                    <p id="quiz-question" class="quiz-block__question">Загрузка вопроса...</p>
+                    <div id="quiz-options" class="quiz-block__options-grid">
+                    </div>
+                    <button id="quiz-submit" class="button button--primary quiz-block__submit-button">Ответить</button>
+                    <p id="quiz-feedback" class="quiz-block__feedback"></p>
+                    <button id="quiz-next" class="button button--secondary quiz-block__next-button" style="display: none;">Следующий вопрос</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- НОВАЯ СЕКЦИЯ: Карусель отзывов с Swiper.js -->
+<section id="testimonials" class="testimonials-section section section--alt reveal-on-scroll">
+    <div class="container">
+        <h2 class="section__title">Что Говорят Наши Студенты</h2>
+        <p class="section__description">Истории успеха тех, кто уже путешествует во времени вместе с Хроно-Навигатором.</p>
+        <!-- Swiper container -->
+        <div class="swiper testimonials-swiper-container" id="testimonialsSwiper">
+            <!-- Wrapper for slides -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <div class="card testimonials-carousel__card">
+                        <p class="testimonials-carousel__text">"Благодаря 'Хроно-Навигатору' я наконец разобрался в Средневековье! Эссе сдал на отлично и получил глубокое понимание эпохи."</p>
+                        <span class="testimonials-carousel__student-name">— Анна, 10 класс</span>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card testimonials-carousel__card">
+                        <p class="testimonials-carousel__text">"Ваши материалы по подготовке к ЕГЭ бесценны. Я поступил в вуз мечты на исторический факультет, о чём давно мечтал!"</p>
+                        <span class="testimonials-carousel__student-name">— Иван, Абитуриент</span>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card testimonials-carousel__card">
+                        <p class="testimonials-carousel__text">"Очень доступно и интересно объясняют сложные темы. Особенно понравились интерактивные хронологии – история оживает!"</p>
+                        <span class="testimonials-carousel__student-name">— Мария, Студентка 1 курса</span>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card testimonials-carousel__card">
+                        <p class="testimonials-carousel__text">"Наконец-то я не путаю даты и события! Спасибо за такую структурированную и увлекательную подачу информации, это изменило мой подход к учёбе."</p>
+                        <span class="testimonials-carousel__student-name">— Олег, 8 класс</span>
+                    </div>
+                </div>
+                <!-- Добавьте столько swiper-slide, сколько у вас карточек отзывов -->
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- Add Navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+</section>
+<!-- КОНЕЦ НОВОЙ СЕКЦИИ: Карусель отзывов с Swiper.js -->
+
+        <section id="fact-of-the-day" class="daily-fact-section section reveal-on-scroll">
+            <div class="container">
+                <h2 class="section__title">&#128161; Факт Дня</h2>
+                <p id="daily-fact" class="daily-fact-section__text">Знаете ли вы, что Великая Китайская стена — это не единое сооружение, а серия стен, построенных и перестроенных разными династиями на протяжении тысячелетий?</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section section reveal-on-scroll">
+            <div class="container">
+                <h2 class="section__title">Свяжитесь С Нами</h2>
+                <p class="section__description">Мы всегда готовы ответить на ваши вопросы и помочь в освоении истории. Оставьте свои данные, и мы свяжемся с вами для подробной консультации.</p>
+                <form class="card contact-form animate-pop-in">
+                    <div class="contact-form__group">
+                        <label for="name" class="contact-form__label">Ваше Имя:</label>
+                        <input type="text" id="name" name="name" required placeholder="Введите ваше имя" class="contact-form__input">
+                    </div>
+                    <div class="contact-form__group">
+                        <label for="email" class="contact-form__label">Ваш Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="Введите ваш email" class="contact-form__input">
+                    </div>
+                    <div class="contact-form__group">
+                        <label for="message" class="contact-form__label">Сообщение:</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="Напишите ваше сообщение здесь..." class="contact-form__textarea"></textarea>
+                    </div>
+                    <button type="submit" class="button button--primary contact-form__submit-button animate-hover-scale">Отправить Сообщение</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p class="main-footer__copyright">&copy; 2025 Хроно-Навигатор. Все права защищены. Погрузитесь в глубины прошлого вместе с нами.</p>
+            <div class="main-footer__social-links">
+                <a href="#" class="main-footer__social-icon" aria-label="Email">&#9993;</a>
+                <a href="#" class="main-footer__social-icon" aria-label="Phone">&#128222;</a>
+                <a href="#" class="main-footer__social-icon" aria-label="Website/Blog">&#128187;</a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollToTopBtn" class="scroll-to-top-button">&#9650;</button>
+
+    <!-- МОДАЛЬНОЕ ОКНО ДЛЯ КОРЗИНЫ -->
+    <div id="purchaseModal" class="modal">
+        <div class="modal__content">
+            <span class="modal__close-button" id="closeModalBtn">&times;</span>
+            <h3 class="modal__title">Ваша Корзина</h3>
+            <div id="cartItems" class="modal__cart-list">
+                <!-- Элементы корзины будут добавлены JS -->
+                <p class="modal__empty-message">Ваша корзина пуста.</p>
+            </div>
+            <div class="modal__cart-summary">
+                <p class="modal__total-text">Общая стоимость: <span class="modal__total-price" id="cartTotal">0.00 ₽</span></p>
+                <button class="button button--primary modal__checkout-button" id="checkoutBtn">Оформить покупку</button>
+            </div>
+        </div>
+    </div>
+    <!-- КОНЕЦ МОДАЛЬНОГО ОКНА -->
+
+    <script src="scripts/script.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+</body>
+</html>

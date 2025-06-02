@@ -1,0 +1,66 @@
+/* ================================================================= */
+/*                       Блок Services-Section                       */
+/* ================================================================= */
+.services-section__wrapper { /* Изначально был .services-content-wrapper */
+    display: flex;
+    align-items: center; /* Центрирует колонки по вертикали */
+    gap: 80px; /* Увеличенное расстояние между колонками */
+    flex-wrap: wrap; /* Позволяет колонкам переходить на новую строку на мобильных */
+    max-width: 1100px; /* Ограничиваем ширину для эстетики */
+    margin: 0 auto;
+}
+
+.services-section__image-col { /* Изначально был .services-image-col */
+    flex: 1; /* Занимает доступное пространство */
+    min-width: 400px; /* Минимальная ширина колонки с изображением */
+    position: relative;
+    box-shadow: var(--box-shadow-elevated); /* Красивая тень */
+    border-radius: 20px; /* Мягкие углы */
+    overflow: hidden; /* Обрезает углы изображения */
+    transform: rotateZ(-2deg); /* Небольшой наклон для динамики */
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.services-section__image-col:hover {
+    transform: rotateZ(0deg) scale(1.02); /* Выпрямление и увеличение при наведении */
+    box-shadow: var(--box-shadow-hover);
+}
+
+.services-section__figure { /* Элемент figure */
+    /* никаких специфичных стилей */
+}
+
+.services-section__image { /* Элемент img */
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px; /* Применяем border-radius к изображению */
+    object-fit: cover; /* Чтобы изображение полностью заполняло контейнер */
+}
+
+.services-section__caption { /* Элемент figcaption */
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный фон для текста */
+    color: var(--white-color);
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    font-style: italic;
+    backdrop-filter: blur(5px); /* Размытие для подписи */
+    transition: opacity 0.3s ease;
+}
+
+.services-section__image-col:hover .services-section__caption {
+    opacity: 0.9;
+}
+
+
+.services-section__text-col { /* Изначально был .services-text-col */
+    flex: 1.2; /* Занимает чуть больше пространства */
+    min-width: 450px; /* Минимальная ширина текстовой колонки */
+    padding: 20px 0; /* Небольшой внутренний отступ */
+}
+.services-section__button { /* Элемент кнопки в блоке Services-Section */
+    /* стили наследуются от .button */
+}

@@ -1,0 +1,147 @@
+/* ================================================================= */
+/*                       ИМПОРТ ШРИФТОВ                              */
+/* ================================================================= */
+/* Lora: Элегантный Serif для заголовков, придает классическую глубину */
+/* Montserrat: Современный Sans-serif для текста, обеспечивает чистоту и читаемость */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* ================================================================= */
+/*                       Переменные для цветов и шрифтов             */
+/* ================================================================= */
+:root {
+    /* Глубокие, насыщенные цвета, вдохновленные космосом и древностью */
+    --primary-color: #2C3E50; /* Темный ультрамарин / почти черный */
+    --primary-dark-color: #1A252E; /* Очень темный, для глубоких теней и фона */
+    --primary-light-color: #4A6C8C; /* Мягкий синий, для градиентов и легких акцентов */
+    --secondary-color: #FFD700; /* Яркое золото, символ роскоши и света */
+    --accent-color: #FF6B6B; /* Вибрантный коралл, для привлечения внимания / ошибок */
+    --success-color: #4CAF50; /* Насыщенный зеленый */
+    --info-color: #2196F3; /* Чистый синий */
+
+    /* Текстовые цвета */
+    --text-color: #333C45; /* Мягкий, но читаемый темно-серый */
+    --text-light-color: #778899; /* Светлый серо-голубой для вторичного текста */
+    --white-color: #FFFFFF;
+
+    /* Фоновые цвета */
+    --bg-base: #F0F2F5; /* Очень светлый серо-голубой, основа */
+    --bg-alt: #E0E5EC; /* Чуть темнее для контрастных секций */
+    --bg-dark-section: #283747; /* Темный фон для особых секций (например, факт дня) */
+
+    /* Границы, тени, свечения */
+    --border-color: #C0C8D2;
+    --box-shadow-subtle: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --box-shadow-elevated: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --box-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.25);
+    --glow-primary: 0 0 15px rgba(44, 62, 80, 0.4), 0 0 30px rgba(44, 62, 80, 0.2);
+    --glow-secondary: 0 0 15px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.3);
+
+    /* Градиенты */
+    --gradient-primary: linear-gradient(145deg, var(--primary-light-color) 0%, var(--primary-color) 100%);
+    --gradient-secondary: linear-gradient(145deg, var(--secondary-color) 0%, #FFC107 100%);
+    --gradient-dark: linear-gradient(145deg, var(--primary-dark-color) 0%, var(--primary-color) 100%);
+
+    /* Шрифты */
+    --font-heading: 'Lora', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+/* ================================================================= */
+/*                       Общие стили и сброс                         */
+/* ================================================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Плавный скролл по якорям */
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    line-height: 1.8; /* Увеличена для лучшей читаемости */
+    background-color: var(--bg-base);
+    overflow-x: hidden; /* Критично для сложных эффектов */
+    font-size: 17px; /* Базовый размер чуть крупнее */
+}
+
+.container {
+    max-width: 1280px; /* Чуть шире */
+    margin: 0 auto;
+    padding: 0 30px; /* Увеличены отступы */
+}
+
+a {
+    color: var(--primary-light-color);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Легкое золотое свечение */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading); /* Изысканный шрифт для заголовков */
+    margin-bottom: 25px;
+    color: var(--primary-dark-color);
+    letter-spacing: 0.05em; /* Небольшое увеличение интервала */
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 5.5em; /* Очень крупный, величественный */
+    text-shadow: 4px 4px 10px rgba(0,0,0,0.4);
+    color: var(--white-color); /* Специально для Hero Section */
+}
+
+h2 {
+    font-size: 3.8em; /* Внушительный размер */
+    text-align: center;
+    margin-bottom: 70px; /* Больше отступа */
+    position: relative;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase; /* Добавляем драматизма */
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -20px; /* Ниже */
+    transform: translateX(-50%) rotate(3deg); /* Небольшой наклон */
+    width: 100px; /* Шире */
+    height: 5px; /* Толще */
+    background: var(--gradient-secondary); /* Золотой градиент */
+    border-radius: 5px;
+    box-shadow: var(--glow-secondary); /* Свечение */
+}
+
+/* Общий стиль для заголовков h3, которые могут иметь символ */
+h3 {
+    font-size: 2.5em; /* Достаточно крупный */
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    position: relative;
+    padding-left: 20px;
+}
+h3::before {
+    content: '★'; /* Декоративный символ */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+    font-size: 0.8em;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: var(--text-color);
+}

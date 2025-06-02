@@ -1,0 +1,156 @@
+/* ================================================================= */
+/*                       Блок Modal (модальное окно)                 */
+/* ================================================================= */
+.modal {
+    display: none; /* Скрыто по умолчанию, управляется JS */
+    position: fixed; /* Фиксированное положение */
+    z-index: 10000; /* Очень высокий z-index, чтобы быть поверх всего */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Включаем прокрутку, если контент не помещается */
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный фон */
+    backdrop-filter: blur(8px); /* Эффект размытия фона за модальным окном */
+    display: flex; /* Для центрирования содержимого */
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Для анимации появления */
+    pointer-events: none; /* Не реагирует на клики, пока не появится */
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal__content {
+    background-color: var(--white-color);
+    margin: auto; /* Автоматические отступы для центрирования */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow-hover); /* Выраженная тень */
+    max-width: 700px; /* Максимальная ширина модального окна */
+    width: 90%; /* Ширина на мобильных */
+    position: relative;
+    transform: translateY(-50px); /* Для анимации появления */
+    transition: transform 0.3s ease;
+}
+
+.modal.active .modal__content {
+    transform: translateY(0);
+}
+
+.modal__close-button {
+    color: var(--text-light-color);
+    font-size: 2.5em;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal__close-button:hover,
+.modal__close-button:focus {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.modal__title { /* Заголовок модального окна */
+    text-align: center;
+    color: var(--primary-dark-color);
+    margin-bottom: 30px;
+    font-size: 2em;
+    padding-left: 0; /* Убираем специфичный отступ для h3 */
+}
+.modal__title::before { /* Убираем специфичный символ для h3 */
+    content: none;
+}
+
+.modal__cart-list {
+    margin-bottom: 30px;
+    max-height: 300px; /* Ограничиваем высоту списка, чтобы была прокрутка */
+    overflow-y: auto; /* Позволяем прокрутку списка товаров */
+    padding-right: 10px; /* Отступ, чтобы скроллбар не наезжал на текст */
+    border-bottom: 1px solid var(--border-color); /* Разделитель */
+    padding-bottom: 15px;
+}
+.modal__cart-list::-webkit-scrollbar {
+    width: 8px;
+}
+.modal__cart-list::-webkit-scrollbar-thumb {
+    background: var(--primary-light-color);
+    border-radius: 4px;
+}
+.modal__cart-list::-webkit-scrollbar-track {
+    background: var(--bg-alt);
+}
+
+.modal__cart-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-top: 1px dashed var(--border-color);
+    font-size: 1.1em;
+}
+.modal__cart-list-item:first-child {
+    border-top: none;
+}
+
+.modal__cart-item-name {
+    font-weight: 500;
+    color: var(--primary-color);
+    flex-grow: 1; /* Занимает доступное пространство */
+}
+.modal__cart-item-price {
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-left: 15px;
+}
+.modal__remove-item-button {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-size: 1.3em;
+    cursor: pointer;
+    margin-left: 15px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+.modal__remove-item-button:hover {
+    transform: scale(1.2);
+    color: var(--primary-dark-color);
+}
+
+.modal__cart-summary {
+    text-align: right;
+    margin-top: 20px;
+    padding-top: 15px;
+}
+
+.modal__total-text {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.modal__total-price {
+    color: var(--secondary-color);
+    font-size: 1.5em;
+    margin-left: 10px;
+    font-family: var(--font-heading);
+}
+
+.modal__empty-message {
+    text-align: center;
+    color: var(--text-light-color);
+    font-style: italic;
+    padding: 20px 0;
+}
+.modal__checkout-button {
+    /* Наследует стили .button */
+}

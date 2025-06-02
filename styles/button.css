@@ -1,0 +1,66 @@
+/* ================================================================= */
+/*                       Блок Button                                 */
+/* ================================================================= */
+.button {
+    display: inline-flex; /* Для центрирования иконок, если будут */
+    align-items: center;
+    justify-content: center;
+    padding: 16px 35px; /* Увеличены отступы */
+    border-radius: 50px; /* Овальные кнопки */
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Мягче и выразительнее */
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 0.08em; /* Шире интервал */
+    position: relative;
+    overflow: hidden; /* Для эффектов свечения */
+    z-index: 1;
+    text-decoration: none; /* Убираем подчеркивание для кнопок-ссылок */
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1); /* Легкий блик */
+    transform: translateX(-100%) skewX(-30deg);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: -1;
+    border-radius: inherit;
+}
+
+.button:hover::before {
+    transform: translateX(100%) skewX(-30deg);
+}
+
+.button--primary {
+    background: var(--gradient-primary);
+    color: var(--white-color);
+    box-shadow: var(--box-shadow-elevated);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.button--primary:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--box-shadow-hover), var(--glow-primary);
+}
+
+.button--secondary {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-light-color);
+    box-shadow: var(--box-shadow-subtle);
+}
+
+.button--secondary:hover {
+    background: var(--gradient-secondary); /* Заливка градиентом при наведении */
+    color: var(--white-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--box-shadow-hover), var(--glow-secondary);
+}

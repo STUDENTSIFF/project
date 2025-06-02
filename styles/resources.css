@@ -1,0 +1,53 @@
+/* ================================================================= */
+/*                       Блок Resources-Section                      */
+/* ================================================================= */
+.resources-section__grid { /* Изначально был .resources-grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 50px;
+    text-align: center;
+}
+
+.resources-section__card { /* Микс с .card */
+    /* .card стили применяются */
+}
+
+.resources-section__card .card__title { /* Специфично для заголовков в карточках ресурсов */
+    padding-left: 0; /* Убираем отступ, который был для звезды */
+    text-align: center; /* Центрируем заголовки в карточках ресурсов */
+}
+
+.resources-section__card .card__title::before { /* Убираем звезду из заголовков карточек ресурсов */
+    content: none;
+}
+
+.resources-section__card .card__description { /* Специфично для описаний в карточках ресурсов */
+    margin-bottom: 15px; /* Немного уменьшаем отступ для текста в карточках ресурсов, чтобы дать больше места */
+    line-height: 1.6; /* Немного уменьшим межстрочный интервал для плотности текста */
+    font-size: 1.05em; /* Можно чуть уменьшить, если текст всё равно не помещается на 2-3 строки */
+    color: var(--text-light-color); /* Более мягкий цвет для текста */
+}
+
+.resources-section__link { /* Элемент ссылки */
+    display: inline-block;
+    margin-top: 25px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    position: relative;
+    padding-bottom: 5px; /* Для подчеркивания */
+}
+
+.resources-section__link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-secondary);
+    transition: width 0.3s ease;
+}
+
+.resources-section__link:hover::after {
+    width: 100%;
+}

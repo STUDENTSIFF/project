@@ -1,0 +1,54 @@
+/* ================================================================= */
+/*                       Блок Contact-Form                           */
+/* ================================================================= */
+.contact-form { /* Микс с .card */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px;
+    /* background-color, border-radius, box-shadow наследуются от .card */
+}
+
+.contact-form__group { /* Элемент группы формы */
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.contact-form__label { /* Элемент метки */
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.15em;
+}
+
+.contact-form__input, /* Элементы полей ввода */
+.contact-form__textarea {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: var(--bg-base); /* Легкий фон для полей */
+}
+
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+    border-color: var(--primary-light-color);
+    box-shadow: 0 0 0 5px rgba(44, 62, 80, 0.2); /* Более выразительный focus-ring */
+    outline: none;
+    background-color: var(--white-color);
+}
+
+.contact-form__textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-form__submit-button { /* Элемент кнопки отправки */
+    width: 100%;
+    font-size: 1.3em;
+    padding: 18px 35px;
+}

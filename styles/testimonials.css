@@ -1,0 +1,73 @@
+/* ================================================================= */
+/*                       Блок Testimonials-Carousel                  */
+/* ================================================================= */
+/* Новые стили для Swiper */
+.testimonials-swiper-container {
+    max-width: 1100px; /* Максимальная ширина, как у старой карусели */
+    margin: 0 auto;
+    padding: 20px 0; /* Чтобы кнопки навигации не прилипали к краям */
+}
+
+.testimonials-swiper-container .swiper-slide {
+    display: flex; /* Чтобы содержимое карточки было отцентрировано */
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonials-swiper-container .swiper-button-prev,
+.testimonials-swiper-container .swiper-button-next {
+    color: var(--primary-color); /* Цвет стрелок навигации */
+    background-color: var(--white-color);
+    border-radius: 50%;
+    width: 60px; /* Размер кнопок */
+    height: 60px;
+    box-shadow: var(--box-shadow-elevated);
+    transition: all 0.3s ease;
+}
+
+.testimonials-swiper-container .swiper-button-prev:hover,
+.testimonials-swiper-container .swiper-button-next:hover {
+    background: var(--gradient-secondary); /* Градиент при наведении */
+    color: var(--white-color);
+    box-shadow: var(--box-shadow-hover);
+    transform: translateY(-3px);
+}
+
+.testimonials-swiper-container .swiper-button-prev::after,
+.testimonials-swiper-container .swiper-button-next::after {
+    font-size: 1.5em; /* Размер символов стрелок */
+    font-weight: bold;
+}
+
+.testimonials-swiper-container .swiper-pagination-bullet {
+    background-color: var(--primary-light-color); /* Цвет неактивных точек пагинации */
+    opacity: 0.5;
+    width: 10px;
+    height: 10px;
+    transition: all 0.3s ease;
+}
+
+.testimonials-swiper-container .swiper-pagination-bullet-active {
+    background-color: var(--secondary-color); /* Цвет активной точки пагинации */
+    opacity: 1;
+    transform: scale(1.2); /* Увеличиваем активную точку */
+}
+
+/* Адаптивный дизайн для Swiper кнопок */
+@media (max-width: 768px) {
+    .testimonials-swiper-container .swiper-button-prev,
+    .testimonials-swiper-container .swiper-button-next {
+        width: 45px;
+        height: 45px;
+        font-size: 1em;
+        top: 50%; /* Сбрасываем top, если Swiper его переопределяет */
+        transform: translateY(-50%); /* Центрируем по вертикали */
+    }
+    /* Дополнительные отступы для пагинации, если нужно */
+    .testimonials-swiper-container .swiper-pagination {
+        bottom: 0px; /* Или любой другой отступ, если пагинация наезжает */
+    }
+    .testimonials-swiper-container {
+        padding-bottom: 40px; /* Увеличиваем отступ, чтобы пагинация не была слишком близко */
+    }
+}

@@ -1,0 +1,167 @@
+/* ================================================================= */
+/*                       Блок Main-Header                            */
+/* ================================================================= */
+.main-header {
+    background-color: rgba(255, 255, 255, 0.05); /* Очень легкая прозрачность */
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: none; /* Изначально без тени */
+    transition: background-color 0.4s ease, box-shadow 0.4s ease, border-bottom 0.4s ease;
+    backdrop-filter: blur(8px); /* Сильное размытие фона */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Легкая граница */
+}
+
+.main-header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95); /* Почти непрозрачный при скролле */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.18); /* Выраженная тень */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.main-header .container { /* Используем вложенность для контейнера внутри блока */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Элементы блока Site-Logo */
+.site-logo {
+    font-size: 2.5em; /* Крупнее */
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.03em;
+    font-family: var(--font-heading); /* Логотип тоже serif */
+    filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.2));
+}
+
+.site-logo__icon { /* Элемент иконки внутри лого */
+    font-size: 1.2em;
+    margin-right: 12px;
+    background: var(--gradient-secondary); /* Золотая иконка */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.1));
+}
+
+/* Элементы блока Main-Nav */
+.main-nav__list {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav__item {
+    margin-left: 40px; /* Больше расстояние */
+}
+
+.main-nav__link {
+    font-weight: 500;
+    padding: 8px 15px; /* Отступы вокруг текста */
+    position: relative;
+    color: var(--white-color); /* Изначально белый для Hero */
+    font-size: 1.1em;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.main-header.scrolled .main-nav__link { /* Селектор изменен */
+    color: var(--text-color); /* Меняем цвет при скролле */
+}
+
+.main-nav__link::before { /* Эффект заливки при наведении */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary); /* Заливка пурпурным */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-out;
+    z-index: -1;
+    border-radius: inherit;
+}
+
+.main-nav__link:hover::before {
+    transform: scaleX(1);
+}
+
+.main-nav__link:hover {
+    color: var(--white-color); /* Текст становится белым при наведении */
+    transform: translateY(-2px);
+}
+
+/* Блок Burger-Menu */
+.burger-menu {
+    display: none;
+    font-size: 2.5em;
+    cursor: pointer;
+    color: var(--white-color); /* Белая иконка для Hero */
+    transition: color 0.3s ease;
+}
+.main-header.scrolled .burger-menu { /* Селектор изменен */
+    color: var(--text-color); /* Темная иконка при скролле */
+}
+
+/* Блок Cart-Button в шапке */
+.cart-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.8em;
+    color: var(--white-color); /* Цвет для Hero */
+    margin-left: 30px;
+    position: relative;
+    padding: 5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: flex; /* Для выравнивания иконки и счетчика */
+    align-items: center;
+}
+.main-header.scrolled .cart-button { /* Селектор изменен */
+    color: var(--primary-color); /* Цвет при скролле */
+}
+.cart-button:hover {
+    transform: scale(1.1);
+    color: var(--secondary-color);
+}
+.cart-button__icon { /* Элемент иконки */
+    font-size: 1em; /* Размер иконки */
+    margin: 0;
+    -webkit-background-clip: unset; /* Сброс для обычной иконки */
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+    text-fill-color: unset;
+    filter: none;
+}
+.cart-button__count { /* Элемент счетчика */
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    font-size: 0.6em;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 3px 6px;
+    min-width: 20px;
+    text-align: center;
+    line-height: 1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    /* Анимация увеличения при изменении числа */
+    transition: transform 0.2s ease;
+}
+.cart-button__count.updated { /* Класс для триггера анимации при обновлении */
+    transform: scale(1.2);
+}

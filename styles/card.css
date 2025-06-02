@@ -1,0 +1,82 @@
+/* ================================================================= */
+/*                       Блок Card                                   */
+/* ================================================================= */
+.card {
+    background-color: var(--white-color);
+    border-radius: 20px; /* Более мягкие, округлые углы */
+    box-shadow: var(--box-shadow-elevated);
+    padding: 40px; /* Увеличены отступы */
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.card::before { /* Декоративный элемент на карточке */
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    background: var(--gradient-secondary);
+    border-radius: 50%;
+    filter: blur(30px);
+    opacity: 0.2;
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.card:hover {
+    transform: translateY(-10px) rotateZ(1deg); /* Легкий подъем и наклон */
+    box-shadow: var(--box-shadow-hover);
+    border-color: var(--primary-light-color); /* При наведении рамка меняет цвет */
+}
+.card:hover::before {
+    opacity: 0.5;
+    transform: scale(1.5) translate(20px, 20px);
+}
+
+/* Элементы блока Card */
+.card__title {
+    font-size: 2.5em; /* Наследует общий h3, но можно переопределить */
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    position: relative;
+    padding-left: 20px; /* Наследуется от h3 */
+}
+.card__title::before { /* Наследуется от h3::before */
+    content: '★';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+    font-size: 0.8em;
+}
+
+.card__description {
+    font-size: 1.1em; /* Наследует общий p */
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+/* Иконки, которые могут быть элементами разных блоков, но имеют общие стили */
+.icon {
+    font-size: 5em; /* Очень крупные иконки */
+    background: var(--gradient-primary); /* Градиентный фон для иконок */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Делает текст прозрачным, чтобы фон был виден */
+    background-clip: text;
+    text-fill-color: transparent;
+    margin-bottom: 25px;
+    display: block;
+    text-align: center;
+    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.2)); /* Эффект тени для прозрачных иконок */
+    transition: all 0.3s ease;
+}
+.card:hover .icon { /* Изменено: теперь это .card .icon */
+    filter: drop-shadow(3px 3px 8px rgba(0,0,0,0.3)) brightness(1.1); /* Усиление тени и яркости при ховере */
+}
+
